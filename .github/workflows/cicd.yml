@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Generate Deployment Packages
-        run: zip -r node-app-build.zip .
+        run: zip -r nodejs-app-build.zip .
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
@@ -33,4 +33,4 @@ jobs:
           environment_name: Node-test-app-env
           version_label: ${{ github.sha }}
           region: ap-south-1
-          deployment_package: node-app-build.zip
+          deployment_package: nodejs-app-build.zip
